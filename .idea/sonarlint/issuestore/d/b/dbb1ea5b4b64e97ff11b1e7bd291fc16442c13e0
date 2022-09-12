@@ -1,0 +1,24 @@
+
+2
+java:S1643"Use a StringBuilder instead.(ΪΤΧ
+r
+java:S1488("\Immediately return this expression instead of assigning it to the temporary variable "mots".(²τι
+k
+java:S1104"PMake repo a static final constant or non-public and provide accessors if needed.(‰Πωÿÿÿÿ
+r
+java:S1104"WMake packagename a static final constant or non-public and provide accessors if needed.(ƒΰ•τϊÿÿÿÿ
+p
+java:S1104"UMake importKey a static final constant or non-public and provide accessors if needed.(ϊς–£ÿÿÿÿÿ
+l
+java:S1104"VMake packageKey a static final constant or non-public and provide accessors if needed.(φ¬άβ
+u
+java:S1104"ZMake dossierPackage a static final constant or non-public and provide accessors if needed.(Εμ¶—ωÿÿÿÿ
+e
+java:S2095>"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(΅ΐήγ8ÿ—µ‘³0
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(γ„ζ
+<
+java:S1075/"&Remove this hard-coded path-delimiter.(£ν£ƒ
+W	java:S8992"BDo something with the "boolean" value returned by "createNewFile".(‡ίΏ 
+N	java:S106F"9Replace this use of System.out or System.err by a logger.(Μ΅ιχ
+W
+java:S1075c"ARefactor your code to get this URI from a customizable parameter.(φÿ°Λ

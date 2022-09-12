@@ -1,0 +1,17 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(­Ÿ¤´þÿÿÿÿ
+P	java:S125("<This block of commented-out lines of code should be removed.(’ÌÌ3
+W
+java:S1128"<Remove this unused import 'com.squareup.javapoet.FieldSpec'.(ë¬°¯üÿÿÿÿ
+V
+java:S1128";Remove this unused import 'com.squareup.javapoet.JavaFile'.(ÅÒ™»þÿÿÿÿ
+S
+java:S1128"=Remove this unused import 'com.squareup.javapoet.MethodSpec'.(È¨¤Û
+Q
+java:S1128";Remove this unused import 'com.squareup.javapoet.TypeSpec'.(¶…¬
+T
+java:S1128	">Remove this unused import 'javax.lang.model.element.Modifier'.(§éÀž
+E
+java:S1128"/Remove this unused import 'java.nio.file.Path'.(×²êÂ
+F
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯
