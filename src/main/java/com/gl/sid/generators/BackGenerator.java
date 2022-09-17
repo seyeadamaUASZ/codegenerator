@@ -12,13 +12,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class BackGenerator {
-    public String repo = "/codeGenerator";
+    public String repo = "C:/Users/AdamaSEYE/Desktop/codegenerator";
     public String packagename="com.gl.sid";
     public String importKey="import";
     public String packageKey="package";
-    public String dossierPackage="src/main/java/com/gl/sid";
+    public String dossierPackage="src/main/java/com/gl/sid/";
 
     public static String capitalize(String str){
         return  str ==null || str.isEmpty() ? str : str.substring(0,1).toUpperCase()+str.substring(1);
@@ -41,27 +42,44 @@ public class BackGenerator {
         return mots;
     }
 
-    public void generateEntityFile(String entity) throws IOException {
+    public void generateEntityFile(String entity,List<String> champs) throws IOException {
         System.out.println("hello generator ");
         StringProcess upperCas = new StringProcess();
         File packentity = new File(this.repo + "/" + this.dossierPackage + "entity");
-        packentity.mkdirs();
+        //System.out.println(packentity.mkdirs());
+        if (!packentity.exists()) {
+            packentity.mkdir();
+            System.out.println("exist directory "+packentity);
+
+    }else{
         File controllerfiles = new File(packentity, "" + upperCas.capitalize(entity) + ".java");
         controllerfiles.createNewFile();
+        //System.out.println( " chemin absolu "+ controllerfiles.getAbsolutePath());
+    }
+ 
+        //System.out.println("creating new file controllers "+controllerfiles);
 
-        String fileJava = this.packageKey+ " "
-                 +".entity;\n"+"\n"
+        String fileJava = this.packageKey+ " "+this.packagename+""+
+                ".entity;\n"+"\n"
                  +"import java.io.Serializable;\n"
-                 +"import com.gl.sid.generators\n"
                  +"public class "+upperCas.capitalize(entity)+" implements Serializable {\n"
                  + "   private static final long serialVersionUID = 1L;\n";
 
 
-        fileJava = fileJava + "}" ;
+        for(int i=0;i<champs.size();i++){
+            fileJava = fileJava+"\n"+
+            "  private String "+champs.get(i)+ ";\n";
+           
+        }
 
+        fileJava=fileJava+"}";
+
+        //System.out.println("file java "+fileJava);
         FileWriter myWriteEntity = new FileWriter(packentity + "/" + capitalize(entity) + ".java");
         myWriteEntity.write ("\n"+fileJava);
         myWriteEntity.close();
+
+        //System.out.println("fichier ecrit "+ myWriteEntity);
 
 
     }
@@ -96,11 +114,30 @@ public class BackGenerator {
         JavaFile javaFile = JavaFile.builder("com.gl.sid.entity",person)
                 .build();
 
-        String despath="C:/Users/dell/Downloads/demandefra/codeGenerator/src/main/java";
+        String despath="C:/Users/ADAMASEYE/Desktop/codeGenerator/src/main/java";
         Path path = Paths.get(despath);
 
         javaFile.writeTo(path);
 
+    }
+
+    public void generateFile() throws IOException{
+        File outFile = new File("/codegenerator/src/main/");
+        
+        outFile.getParentFile().mkdirs();
+        
+        FileWriter fileWriter = new FileWriter(outFile);
+        
+        System.out.println("Writer file: " + outFile.getAbsolutePath());
+        System.out.println("With encoding: " + fileWriter.getEncoding());
+
+        fileWriter.write("Line 1");
+        fileWriter.write("\n");
+        fileWriter.write("Line 2");
+        fileWriter.write("\n");
+        fileWriter.write("Line 3");
+
+        fileWriter.close();
     }
 
 
